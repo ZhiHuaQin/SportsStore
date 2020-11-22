@@ -14,6 +14,14 @@ namespace Vic.SportsStore.WebApp.Controllers
     {
         public IProductsRepository ProductsRepository { get; set; }
            = new EFProductRepository();
+      //  private IProductsRepository ProductsRepository;
+        public IOrderProcessor orderProcessor { get; set; }
+            =new EmailOrderProcessor(new EmailSettings());
+        //public CartController(IProductsRepository repo, IOrderProcessor proc)
+        //{
+        //    ProductsRepository = repo;
+        //    orderProcessor = proc;
+        //}
         public RedirectToRouteResult AddToCart(Cart cart, int productId, string returnUrl)
         {
             Product product = ProductsRepository.Products
@@ -62,5 +70,25 @@ namespace Vic.SportsStore.WebApp.Controllers
         {
             return View(new ShippingDetails());
         }
+
+        [HttpPost]
+        public ViewResult Checkout(Cart cart, ShippingDetails shippingDetails)
+        {
+            if (cart.Lines.Count() == 0)
+            {
+                ModelState.AddModelError("", "Sorry, your cart is empty!");
+            }
+            if (ModelState.IsValid)
+            {
+                orderProcessor.ProcessOrder(cart, shippingDetails);
+                cart.Clear();
+                return View("Completed");
+            }
+            else
+            {
+                return View(shippingDetails);
+            }
+        }
+
     }
 }
