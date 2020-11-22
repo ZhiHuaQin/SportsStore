@@ -31,10 +31,13 @@ namespace Vic.SportsStore.WebApp.Controllers
                 {
                     CurrentPage = page,
                     ItemsPerPage = PageSize,
-                    TotalItems = ProductsRepository
-                     .Products
-                     .Where(p => category == null || p.Category == category)
-                     .Count()
+                    TotalItems = category == null
+                        ? ProductsRepository.Products.Count()
+                        : ProductsRepository.Products.Where(e => e.Category == category).Count()
+                    //TotalItems = ProductsRepository
+                    // .Products
+                    // .Where(p => category == null || p.Category == category)
+                    // .Count()
                 },
                 CurrentCategory = category
             };
