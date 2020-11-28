@@ -18,10 +18,10 @@ namespace Vic.SportsStore.DebugConsole
                 {
                     var product = new Product()
                     {
-                        Name = $"football_{i}",
+                        Name = $"Basketball_{i}",
                         Price = 12.34m,
-                        Description = "this is a football",
-                        Category = "ball"
+                        Description = "This is a basketball",
+                        Category = "Basketball"
                     };
                     ctx.Products.Add(product);
                     ctx.SaveChanges();

@@ -21,5 +21,15 @@ namespace Vic.SportsStore.Domain.Concrete
         {
             get { return _products; }
         }
+
+        public void SaveProduct(Product product)
+        {
+           
+        }
+
+        public Product DeleteProduct(int productId)
+        {
+            return null;
+        }
     }
 }

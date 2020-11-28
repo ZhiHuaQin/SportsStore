@@ -34,10 +34,6 @@ namespace Vic.SportsStore.WebApp.Controllers
                     TotalItems = category == null
                         ? ProductsRepository.Products.Count()
                         : ProductsRepository.Products.Where(e => e.Category == category).Count()
-                    //TotalItems = ProductsRepository
-                    // .Products
-                    // .Where(p => category == null || p.Category == category)
-                    // .Count()
                 },
                 CurrentCategory = category
             };
