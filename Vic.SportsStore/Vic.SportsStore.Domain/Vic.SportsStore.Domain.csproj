@@ -78,6 +78,7 @@
     <Compile Include="Concrete\EFProductRepository.cs" />
     <Compile Include="Concrete\EmailOrderProcessor.cs" />
     <Compile Include="Concrete\InMemoryProductRepository.cs" />
+    <Compile Include="Entities\AdminUser.cs" />
     <Compile Include="Entities\Cart.cs" />
     <Compile Include="Entities\EmailSettings.cs" />
     <Compile Include="Entities\Product.cs" />
@@ -93,6 +94,10 @@
     <Compile Include="Migrations\202011292201581_ProductAddImage.cs" />
     <Compile Include="Migrations\202011292201581_ProductAddImage.designer.cs">
       <DependentUpon>202011292201581_ProductAddImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011292235595_AdminUsersTbl.cs" />
+    <Compile Include="Migrations\202011292235595_AdminUsersTbl.designer.cs">
+      <DependentUpon>202011292235595_AdminUsersTbl.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -110,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202011292201581_ProductAddImage.resx">
       <DependentUpon>202011292201581_ProductAddImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011292235595_AdminUsersTbl.resx">
+      <DependentUpon>202011292235595_AdminUsersTbl.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
