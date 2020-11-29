@@ -15,6 +15,7 @@ namespace Vic.SportsStore.WebApp
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+          //  IocConfig.ConfigIoc();
             ModelBinders.Binders.Add(typeof(Cart), new CartModelBinder());
         }
     }

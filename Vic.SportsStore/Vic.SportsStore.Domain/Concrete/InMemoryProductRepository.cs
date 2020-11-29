@@ -24,12 +24,12 @@ namespace Vic.SportsStore.Domain.Concrete
 
         public void SaveProduct(Product product)
         {
-           
+            throw new NotImplementedException();
         }
 
         public Product DeleteProduct(int productId)
         {
-            return null;
+            throw new NotImplementedException();
         }
     }
 }
